@@ -1,0 +1,29 @@
+<h4 class="mb-4 mx-auto d-block ">Danh Sách Project</h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>description</th>
+        <th>gia</th>
+        <th>anh</th>
+        <th>Aciton</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of listProjects ;track p.id){
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.description }}</td>
+        <td>{{ p.price }}</td>
+        <td><img src="{{p.image}}" alt="" width="200px"></td>
+        <td>
+            <button class="btn btn-info"><a [routerLink]="['/detail', p.id]" >Detai</a></button>
+            <a (click)="delete(p.id)"  class="m-2 btn btn-danger">Delete</a>
+            <button class="btn btn-warning"><a [routerLink]="['/update', p.id]">Update</a></button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>

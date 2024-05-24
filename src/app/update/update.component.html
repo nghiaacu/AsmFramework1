@@ -1,0 +1,29 @@
+<div>
+    <!-- Ten form và tên hàm khi bắt sự kiện ngSubmit ko được trùng nhau -->
+    <!-- 
+      *khai báo tên form: #tenForm="ngForm"
+      *Bắt ự kiện submit: (ngSubmit)= tenHam(tenForm.value)
+     -->
+    <!--  -->
+    <h3 class="mt-4 mx-auto d-block">Cập Nhật Project</h3>
+    <form #edit="ngForm" (ngSubmit)="onEdit(edit.value)">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="oldProject.name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Description</label>
+            <input type="text" class="form-control"  [(ngModel)]="oldProject.description" name="description" ngModel>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Price</label>
+            <input type="number" class="form-control" [(ngModel)]="oldProject.price" name="price" ngModel>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Image</label>
+            <input type="text" class="form-control" [(ngModel)]="oldProject.image" name="image" ngModel>
+        </div>
+
+        <input type="submit" class="btn btn-success mt-2 mx-auto d-block" value="Cập nhật">
+    </form>
+</div>
